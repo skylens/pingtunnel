@@ -26,5 +26,6 @@ jobs:
 
     - name: Build
       run: |
-        go build -v .
-        ./pingtunnel
+        CGO_ENABLED=0 GOOS=freebsd GOARCH=amd64 go build -v .
+        ls
+        pwd
