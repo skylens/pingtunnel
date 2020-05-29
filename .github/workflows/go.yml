@@ -26,6 +26,9 @@ jobs:
 
     - name: Build
       run: |
-        CGO_ENABLED=0 GOOS=freebsd GOARCH=amd64 go build -v .
-        ls
-        pwd
+        CGO_ENABLED=0 GOOS=freebsd GOARCH=amd64 go build -v . -o pingtunnel_freebsd_amd64
+        CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -v . -o pingtunnel_darwin_amd64
+        CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -v . -o pingtunnel_windows_amd64
+        CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -v . -o pingtunnel_linux_amd64
+        tree ${PWD}
+        ls /home/runner/work/pingtunnel/pingtunnel/pingtunnel*
