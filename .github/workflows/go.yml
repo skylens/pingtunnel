@@ -27,16 +27,16 @@ jobs:
     - name: Build
       run: |
         CGO_ENABLED=0 GOOS=freebsd GOARCH=amd64 go build -v .
-        go clean
         mv pingtunnel pingtunnel_freebsd_amd64
+        go clean
         CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 go build -v .
-        go clean
         mv pingtunnel pingtunnel_darwin_amd64
+        go clean
         CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build -v .
-        go clean
         mv pingtunnel pingtunnel_windows_amd64
-        CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -v .
         go clean
+        CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -v .
         mv pingtunnel pingtunnel_linux_amd64
+        go clean
         tree ${PWD}
         ls /home/runner/work/pingtunnel/pingtunnel/pingtunnel*
