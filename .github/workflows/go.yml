@@ -31,7 +31,7 @@ jobs:
         GOOS=darwin GOARCH=amd64 go build .
         mv pingtunnel pingtunnel_darwin_amd64
         GOOS=windows GOARCH=amd64 go build .
-        mv pingtunnel pingtunnel_windows_amd64
+        mv pingtunnel.exe pingtunnel_windows_amd64.exe
         GOOS=linux GOARCH=amd64 go build .
         mv pingtunnel pingtunnel_linux_amd64
         sudo -E apt-get -y install tree
