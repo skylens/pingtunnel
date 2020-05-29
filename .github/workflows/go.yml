@@ -27,5 +27,6 @@ jobs:
     - name: Build
       run: |
         CGO_ENABLED=0 GOOS=freebsd GOARCH=amd64 go build -v .
+        mv pingtunnel pingtunnel_freebsd_amd64
         sudo -E apt-get -y install tree
         tree ${PWD}
